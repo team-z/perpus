@@ -1,0 +1,20 @@
+.style
+{
+	background-image: url(bok.jpg);
+	background-size: cover;
+}
+.jumbotron
+{
+	background-color: default;
+
+}
+.footer {
+	position: relative;
+	margin-top: -150px;
+	height: 150px;
+	clear: both;
+	padding-top: 20px;
+}
+.foot {
+	font-color: red;
+}
