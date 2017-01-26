@@ -12,7 +12,7 @@
 	</style>
 </head>
 <body style="background: url('../img/admin-login.jpg');background-size: cover;">
-<br><br><br><br><br><br>
+<br><br><br><br><br>
    <div class="container">
      <div class="row">
         <div class="col-md-8">
@@ -23,7 +23,7 @@
          </div>
 
          <div class="col-md-4">
-           <div class="jumbotron" style="background-color: rgba(255,255,255,0.4);">
+           <div class="jumbotron" style="background-color: rgba(255,226,198,0.4);">
            <h1>Login</h1>
          	 <form class="form-horizontal">
                <div class="form-group">
