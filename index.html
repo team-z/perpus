@@ -22,11 +22,20 @@
         background-color: white;
         border: 2px solid #5c5c5c;
       }
+      .overlay{
+              background-color: rgba(0,0,0,0.4);
+              bottom: 0;
+              left: 0;
+              position: absolute;
+              right: 0;
+              top: 0;
+              z-index: 999;
+        }
     </style>
   </head>
   <body style="background: url('img/background.jpg');background-size: cover;font-family: 'Raleway' ,sans-serif">
     
-
+<div class="overlay">
         <nav class="navbar navbar-default navbar-fixed-top" style="background-color: rgba(255,255,255,0);border: none;color: white;padding: 25px;">
             <div class="container-fluid" >
                 <div class="navbar-header">
@@ -91,6 +100,7 @@
      </ul>
     </div>
     </div>
+</div>
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
