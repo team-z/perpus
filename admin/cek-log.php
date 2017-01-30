@@ -12,6 +12,7 @@ if (mysqli_num_rows($sql)==1) {
 	$data=mysqli_fetch_array($sql);
 	$_SESSION['user']=$data['user'];
 	$_SESSION['fullname']=$data['fullname'];
+	$_SESSION['password']=$data['password'];
 	$_SESSION['foto']=$data['foto'];
 	header("location:admin.php");
 }

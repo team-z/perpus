@@ -94,7 +94,19 @@ $config=mysqli_fetch_array($sql);
                     <h2>Notification</h2>
                    </div>
                    <div class="panel-body">
-                     
+                     <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from admin order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-success">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                    <strong><?php echo $row['fullname']; ?></strong>, Telah ditambahkan menjadi admin PerPusWeb yang baru. 
+                    </div>
+                    <?php } ?>
                    </div>
                   </div>
                 </div>
