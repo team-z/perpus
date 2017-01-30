@@ -52,7 +52,6 @@ $config=mysqli_fetch_array($sql);
                       </div>
                     </div>
                 </div>
-                
                 <div class="input-group">
                   <span class="input-group-addon">Berita Hari Ini</span>
                      <marquee class="form-control" scrollamount=14 style="font-family: arial;font-weight: bolder;"><?php echo $config['berita']; ?></marquee>

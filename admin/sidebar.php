@@ -11,8 +11,8 @@ include "koneksi.php";
 <div id="sidebar-wrapper">
             <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
                 <li>
-                    <img src="../img/admin-login.jpg" class="img-circle" height="150" width="150"><br>
-                    <a href="#" style="color: white;"><?php echo $_SESSION['fullname'];?></a>
+                    <img src="<?php echo $_SESSION['foto']; ?>" height="200" width="200" class="img-circle" alt="User Image" style="border: 3px solid white;" /><br>
+                    <a href="detail-admin.php" style="color: white;"><?php echo $_SESSION['fullname'];?></a>
                 </li>
                 <li>
                     <a href="admin.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Dashboard</a>
@@ -20,7 +20,7 @@ include "koneksi.php";
                 <li>
                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-book fa-stack-1x "></i></span> Inventory</a>
                     <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="lihat-lapak.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-eye fa-stack-1x "></i></span>Lihat Buku</a></li>
+                        <li><a href="data-buku.php"><span class="fa-stack fa-lg pull-left"><i class="fa fa-eye fa-stack-1x "></i></span>Lihat Buku</a></li>
                         <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-plus fa-stack-1x "></i></span>Lihat Alat</a></li>
 
                     </ul>

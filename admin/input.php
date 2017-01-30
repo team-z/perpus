@@ -1,20 +1,18 @@
 <?php
-$con=mysqli_connect("localhost","root","","library");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-$user=$_POST['user'];
-$pass=$_POST['password'];
+include "koneksi.php";
+$uploaddir="img/"; //path
+$uploadfile=$uploaddir.basename($_FILES['uploaded_file']['name']);
+$upload=$_FILES['uploaded_file']['name'];
+$user= $_POST['user'];
+$password=$_POST['password'];
 $name=$_POST['name'];
-// Perform queries 
-$q = mysqli_query($con,"INSERT INTO administrator (id,user,password,fullname) VALUES (NULL,'$user','$pass','$name')");
-if ($q) {
-	echo "<script>alert('Input Admin Berhasil!');window.location='data-admin.php'</script>";
+if (move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $uploadfile)) {
+			$res=mysqli_query($link , "INSERT INTO admin(id,user,password,fullname,foto) VALUES
+            (NULL,'$user','$password','$name','$uploadfile')") or die (mysqli_error());
+	echo "Berhasil<br><a href=input-admin.php>Input Lagi</a>";
 }else{
-    echo "<script>alert('Input Admin Gagal!');window.location='input-admin.php'</script>";
+	echo "failed";
 }
-mysqli_close($con);
+
+
 ?>
