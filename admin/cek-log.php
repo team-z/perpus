@@ -14,6 +14,7 @@ if (mysqli_num_rows($sql)==1) {
 	$_SESSION['fullname']=$data['fullname'];
 	$_SESSION['password']=$data['password'];
 	$_SESSION['foto']=$data['foto'];
+	echo "<script>alert('Berhasil!');window.location='admin.php'</script>";
 	header("location:admin.php");
 }
 }
