@@ -1,0 +1,33 @@
+Sistem Perpus Online v.0.1 :
+
+User :
+-Sistem Pencarian (user)
+-Sistem Baca Buku Online
+-Sistem Unduh Buku
+
+Petugas :
+-Sistem Input Buku
+-Sistem Peminjaman
+-Sistem Pengembalian
+-Sistem Denda
+-Sistem Input Anggota
+
+
+Admin :
+-Dashboard#
+-CRUD Buku
+-CRUD Petugas
+-CRUD Anggota
+-CRUD Admin#
+-About#
+-Settings
+-Reporting
+-LogOut#
+
+
+Bug:
+password belum di bcrypt
+Nomor Anggota (belum)
+Halaman Public (kurang Sidebar)
+
+

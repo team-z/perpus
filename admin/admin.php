@@ -1,6 +1,12 @@
 <?php include "koneksi.php"; 
 $sql= mysqli_query($link,"SELECT * FROM config");
 $config=mysqli_fetch_array($sql);
+$sql1=mysqli_query($link,"SELECT * FROM anggota");
+$num=mysqli_num_rows($sql1);
+$sql2=mysqli_query($link,"SELECT * FROM petugas");
+$num1=mysqli_num_rows($sql2);
+$sql3=mysqli_query($link,"SELECT * FROM buku");
+$num2=mysqli_num_rows($sql3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,21 +39,21 @@ $config=mysqli_fetch_array($sql);
                     <div class="col-md-4">
                       <div class="jumbotron">
                        <h3>
-                       <i class="fa fa-book fa-stack"></i> Jumlah Buku & Alat :
+                       <i class="fa fa-book fa-stack"></i> Jumlah Buku : <?php echo $num2; ?>
                         </h3>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="jumbotron">
                        <h3>
-                       <i class="fa fa-user fa-stack"></i> Jumlah Anggota :
+                       <i class="fa fa-user fa-stack"></i> Jumlah Anggota : <?php echo $num; ?>
                         </h3>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="jumbotron">
                        <h3>
-                       <i class="fa fa-user fa-stack"></i> Jumlah Petugas :
+                       <i class="fa fa-user fa-stack"></i> Jumlah Petugas : <?php echo $num1; ?>
                         </h3>
                       </div>
                     </div>
@@ -107,26 +113,135 @@ $config=mysqli_fetch_array($sql);
                     <strong><?php echo $row['fullname']; ?></strong>, Telah ditambahkan menjadi admin PerPusWeb yang baru. 
                     </div>
                     <?php } ?>
+                    <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from petugas order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-info">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                    <strong><?php echo $row['fullname']; ?></strong>, Telah ditambahkan menjadi Petugas PerPusWeb yang baru. 
+                    </div>
+                    <?php } ?>
+
+                    <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from anggota order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-warning">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                    <strong><?php echo $row['nama']; ?></strong>, Telah ditambahkan menjadi Anggota PerPusWeb yang baru. 
+                    </div>
+                    <?php } ?>
                    </div>
                   </div>
                 </div>
+
+
                 <div class="col-md-4">
                   <div class="panel panel-success">
                    <div class="panel-heading">
-                    <h2>Inventory Masuk</h2>
+                    <h2>New Member</h2>
                    </div>
                    <div class="panel-body">
-                     
-                   </div>
+                     <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from admin order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-success">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                      <div class="row">
+                       <div class="col-md-4">
+                        <img src="<?php echo $row['foto']; ?>" height="60" width="60" class="img-circle" alt="User Image" style="border: 3px solid white;" />
+                       </div>
+                       <div class="col-md-8">
+                        <strong><?php echo $row['fullname']; ?> (Admin)</strong>
+                      </div>
+                      <?php } ?>
+                      </div>
+                    </div>
+
+
+                     <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from petugas order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-info">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                      <div class="row">
+                       <div class="col-md-4">
+                        <img src="<?php echo $row['foto']; ?>" height="60" width="60" class="img-circle" alt="User Image" style="border: 3px solid white;" />
+                       </div>
+                       <div class="col-md-8">
+                        <strong><?php echo $row['fullname']; ?> (Petugas)</strong>
+                      </div>
+                      <?php } ?>
+                      </div>
+                    </div>
+
+                     <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from anggota order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-warning">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                      <div class="row">
+                       <div class="col-md-4">
+                        <img src="<?php echo $row['foto']; ?>" height="60" width="60" class="img-circle" alt="User Image" style="border: 3px solid white;" />
+                       </div>
+                       <div class="col-md-8">
+                        <strong><?php echo $row['nama']; ?> (Anggota)</strong>
+                      </div>
+                      <?php } ?>
+                      </div>
+                    </div>
+
+
+
+
                   </div>
-                </div>
+                  </div>
+                  </div>
+
+
                 <div class="col-md-4">
                   <div class="panel panel-info">
                    <div class="panel-heading">
                     <h2>Buku Terkini</h2>
                    </div>
                    <div class="panel-body">
-                     
+                  <?php
+                     include "koneksi.php";
+                     $sql=mysqli_query($link,"SELECT * from buku order by id desc limit 1");
+                     while($row= mysqli_fetch_array($sql))
+                     {
+                    ?>
+                    <div class="alert alert-danger">
+                      <button data-dismiss="alert" class="close close-sm" type="button">
+                      <i class="fa fa-times"></i>
+                      </button>
+                    Buku yang berjudul <strong><?php echo $row['judul_buku']; ?></strong>, Telah ditambahkan ke daftar buku. 
+                    </div>
+                    <?php } ?>
                    </div>
                   </div>
                 </div>

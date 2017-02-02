@@ -1,8 +1,7 @@
 <?php
-$id=$_GET['id'];
-$link = mysqli_connect("localhost", "root", "", "library");
-$result = mysqli_query($link, "SELECT * FROM admin where id='$id'");
-$row=mysqli_fetch_array($result);
+
+$a=rand(99999,112890);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,27 +51,40 @@ $row=mysqli_fetch_array($result);
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid xyz">
-                <center><h1>Update Admin</h1></center> 
-<form enctype="multipart/form-data" method="post" action="update.php?id=<?php echo $row[0];?>">
+                <center><h1>Input Petugas</h1></center> 
+<form enctype="multipart/form-data" method="post" action="input_petugas.php">
 <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
   <div class="form-group">
-    <label for="user">User Baru</label>
-    <input type="text" class="form-control" placeholder="User Baru" name="user">
+    <label for="user">Kode Petugas</label>
+    <input type="hidden" name="nomor" value="<?php echo $a;?>"><?php echo $a;?><br>
+    <a href="input-petugas.php"><span class="glyphicon glyphicon-refresh"></span> Refresh Kode</a>
   </div>
   <div class="form-group">
-    <label for="user">Nama Lengkap Baru</label>
-    <input type="text" class="form-control" placeholder="Nama Lengkap Baru" name="name">
+    <label for="fullname">Nama Lengkap</label>
+    <input type="text" class="form-control" placeholder="Nama Lengkap" name="fullname">
   </div>
   <div class="form-group">
-    <label for="password">Password Baru</label>
-    <input type="password" class="form-control" placeholder="Password Baru" name="password">
+    <label for="password">TTL</label>
+    <input type="date" class="form-control" name="ttl">
+  </div>
+  <div class="form-group">
+    <label for="fullname">Tempat Lahir</label>
+    <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat">
+  </div>
+  <div class="form-group">
+    <label for="fullname">No.Telp</label>
+    <input type="text" class="form-control" name="no" placeholder="Nomor Telepon">
+  </div>
+  <div class="form-group">
+    <label for="fullname">Alamat</label>
+    <textarea class="form-control" name="alamat" placeholder="Alamat"></textarea>
   </div>
   <div class="form-group">
     <label for="fullname">Upload Foto</label><br>
     <img id="preview" src="" alt="" width="200px"/><br><br>
     <input accept="image/*" class="input"  onchange="tampilkanPreview(this,'preview')" type="file" name="uploaded_file">
   </div>
-  <button type="submit" class="btn btn-primary">Update</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Daftar</button>
 </form>
             </div>
         </div>

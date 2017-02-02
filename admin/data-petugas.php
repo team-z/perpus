@@ -22,16 +22,15 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid xyz">
-                <center><h1>Data Admin</h1></center> 
-                <a href="input-admin.php" class="btn btn-lg btn-success"><i class="glyphicon glyphicon-plus"></i> Input Admin</a><br><br>
+                <center><h1>Data Petugas</h1></center> 
+                <a href="input-petugas.php" class="btn btn-lg btn-success"><i class="glyphicon glyphicon-plus"></i> Input Petugas</a><br><br>
                 <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th><center>No</center></th>
                         <th><center>Foto</center></th>
+                        <th><center>Nomor Petugas</center></th>
                         <th><center>Fullname</center></th>
-                        <th><center>User</center></th>
-                        <th><center>Password</center></th>
                         <th><center>Aksi</center></th>
                     </tr>
                     </thead>
@@ -39,7 +38,7 @@
 <?php
 $link = mysqli_connect("localhost", "root", "", "library");
 $no=1;
-$result = mysqli_query($link, "SELECT * FROM admin");
+$result = mysqli_query($link, "SELECT * FROM petugas");
 while ($row=mysqli_fetch_array($result))
 {
 ?>
@@ -48,17 +47,16 @@ while ($row=mysqli_fetch_array($result))
                         <td align="center">
                         <img class="img-circle" height="100" width="100" src="<?php echo $row['foto']; ?>">
                         </td>
-                        <td align="center"><?php echo $row[2];?></td>
-                     	<td align="center"><?php echo $row[1];?></td>
-                     	<td align="center"><?php echo $row[3];?></td>
+                        <td align="center"><?php echo $row[1];?></td>
+                     	<td align="center"><?php echo $row[2];?></td>
                      	<td align="center">
-                            <a href="delete.php?id=<?php echo $row[0];?>" class="btn btn-danger" onclick="return confirm ('Hapus <?php echo $row[2];?> ?');"title="Hapus">
+                            <a href="detail-petugas.php?id=<?php echo $row[0];?>" class="btn btn-info">
+                                <i class="glyphicon glyphicon-eye-open"></i> Detail
+                            </a>
+
+                            <a href="delete-petugas.php?id=<?php echo $row[0];?>" class="btn btn-danger" onclick="return confirm ('Hapus <?php echo $row[2];?> ?');"title="Hapus">
                                 <i class="glyphicon glyphicon-trash"></i> Hapus
                             </a> 
-
-                     		<a href="update-admin.php?id=<?php echo $row[0];?>"" class="btn btn-md btn-primary">
-                     			<i class="glyphicon glyphicon-refresh"></i> Update
-                     		</a>
                      	</td>
                      </tr>
 

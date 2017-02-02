@@ -1,22 +1,17 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+<nav class="navbar navbar-default no-margin">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#target" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+                <div class="navbar-header fixed-brand">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
+                      <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Perpus Online</a>        
+                </div><!-- navbar-header-->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="target">
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Tentang Kami</a></li>
-      <li><a href="index.html">Keluar</a></li>
-      </ul>
-    </div>
-   </div>
-</nav>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="">Tentang</a></li>
+                                <li><a href="">Keluar</a></li>
+                            </ul>
+                </div><!-- bs-example-navbar-collapse-1 -->
+    </nav>
+

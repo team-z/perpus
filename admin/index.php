@@ -27,11 +27,11 @@
            <h1>Login</h1>
          	 <form class="form-horizontal" method="post" action="cek-log.php">
                <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Username" name="user">
+                <input type="text" class="form-control input-lg" placeholder="Username" name="user" required="">
                </div>
 
                <div class="form-group">
-                <input type="password" class="form-control input-lg" placeholder="Password" name="password">
+                <input type="password" class="form-control input-lg" placeholder="Password" name="password" required="">
                </div>
 
                <div class="form-group">
