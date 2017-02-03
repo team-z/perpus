@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2017 at 07:49 AM
+-- Generation Time: Feb 03, 2017 at 09:39 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -92,7 +92,13 @@ CREATE TABLE `buku` (
 INSERT INTO `buku` (`id`, `id_buku`, `judul_buku`, `genre`, `penerbit`, `tahun_terbit`, `cover`) VALUES
 (1, '02.01', 'GuruCorel', 'Multimedia', 'Team-Z', '2017', 'img/Cara Mudah 20 Menit Membuat COVER BUKU Dengan Corel Draw Terbaru2.png'),
 (2, '01.01', 'Pemrograman Java', 'Pemrograman Komputer', 'Team-Z', '2017', 'img/1.png'),
-(3, '02.01.01', 'Pemrograman Web', 'Pemrograman Komputer', 'Team-Z', '2017', 'img/Cover modul web.png');
+(3, '02.01.01', 'Pemrograman Web', 'Pemrograman Komputer', 'Team-Z', '2017', 'img/Cover modul web.png'),
+(4, '04.07.01', 'Harry Potter : Chamber Of Secrets', 'Novel', 'J.K Rowling', '2003', 'img/HP_hc_old_2.jpg'),
+(5, '040705', 'Trash', 'Novel', 'Andy Mulligan', '2006', 'img/Trash-cover.jpg'),
+(6, '04.07.04', 'Taken', 'Novel', 'Barbara Freethy', '2010', 'img/Taken.jpg'),
+(7, '04.07.05', 'Nether', 'Novel', 'Jason Beymer', '2007', 'img/Nether_Ebook_small.jpg'),
+(8, '04.08.01', 'Boruto : Naruto The Movie', 'Komik', 'Masashi Kishimoto', '2016', 'img/9b8d0b5993c898aada1e856c00cc8397.jpg'),
+(9, '04.08.02', 'Shingeki No Kyojin : Birth Of Levi Part 1', 'Pemrograman Komputer', 'Hajime Isayama', '2016', 'img/shingeki_no_kyojin_birth_of_levi_kuinaki_sentaku.jpg');
 
 -- --------------------------------------------------------
 
@@ -112,7 +118,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `lama`, `denda`, `berita`) VALUES
-(1, '7', '300', '19 Februari 2017 : Update Fitur Perpustakaan Online');
+(1, '7', '300', '20 Maret 2016 : Peluncuran Novel Harry Potter and The Cursed Child');
 
 -- --------------------------------------------------------
 
@@ -208,12 +214,12 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `config`
 --
