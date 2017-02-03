@@ -22,7 +22,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid xyz">
-            <div>
+            <div align="right">
                 <nav class="navbar navbar-light bg-faded">
                     <form class="form-inline">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search">
