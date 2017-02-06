@@ -27,7 +27,7 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
-                        <th><center>No</center></th>
+                        <th><center>Nomor Anggota</center></th>
                         <th><center>Foto</center></th>
                         <th><center>Fullname</center></th>
                         <th><center>Aksi</center></th>
@@ -42,7 +42,7 @@ while ($row=mysqli_fetch_array($result))
 {
 ?>
                      <tr>
-                     	<td align="center"><?php echo $no++;?></td>
+                     	<td align="center"><?php echo $row[1];?></td>
                         <td align="center">
                         <img src="<?php echo $row['7']; ?>" height="100" width="100" class="img-circle" alt="User Image" style="border: 3px solid white;" />
                         </td>

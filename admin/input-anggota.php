@@ -1,5 +1,8 @@
-<?php
-$rand=rand(0192389021,123709981);
+<?php 
+
+$rand= rand(253893,91863812);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +56,8 @@ $rand=rand(0192389021,123709981);
 <form enctype="multipart/form-data" method="post" action="input_anggota.php">
 <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
   <div class="form-group">
-    <label for="fullname">Nomor Petugas</label>
-    <input type="hidden" name="kode" value="<?php echo $rand; ?>"><?php echo $rand; ?>
+    <label for="fullname">Nomor Anggota :</label><br>
+    <input class="form-control" type="hidden" name="kode" value="<?php echo $rand; ?>"><?php echo $rand; ?>
   </div>
   <div class="form-group">
     <label for="fullname">Nama Lengkap</label>

@@ -1,6 +1,6 @@
 <?php
 include "koneksi.php";
-$uploaddir="img/"; //path
+$uploaddir="../petugas/img/"; //path
 $uploadfile=$uploaddir.basename($_FILES['uploaded_file']['name']);
 //Variabel POST
 $upload=$_FILES['uploaded_file']['name'];

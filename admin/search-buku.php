@@ -1,3 +1,13 @@
+<?php
+include "koneksi.php";
+
+$search = $_POST['search'];
+$sql=mysqli_query($link,"SELECT * FROM buku WHERE judul_buku LIKE '%$search%' || genre LIKE '%$search%' || id_buku LIKE '%$search%' || penerbit LIKE '%$search%' || tahun_terbit LIKE '%$search%'");
+if ($sql) {
+	# code...
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,10 +63,12 @@
                     </thead>
                     <tbody>
 <?php
-$link = mysqli_connect("localhost", "root", "", "library");
-$no=1;
-$result = mysqli_query($link, "SELECT * FROM buku");
-while ($row=mysqli_fetch_array($result))
+include "koneksi.php";
+$search = $_POST['search'];
+$sql=mysqli_query($link,"SELECT * FROM buku WHERE judul_buku LIKE '%$search%' || genre LIKE '%$search%' || id_buku LIKE '%$search%' || penerbit LIKE '%$search%' || tahun_terbit LIKE '%$search%'");
+if ($sql) {
+ $no=1;
+ while ($row=mysqli_fetch_array($sql))
 {
 ?>
                      <tr>
@@ -76,7 +88,7 @@ while ($row=mysqli_fetch_array($result))
                      </tr>
 
                     </tbody>
-<?php } ?>
+<?php } } ?>
                 </table>
             </div>
         </div>

@@ -50,7 +50,7 @@
             <div class="container-fluid xyz">
 
                 <div class="jumbotron">
-                <h1>Detail Anggota</h1>
+                <h1>Detail Buku</h1>
                 <?php 
                 include "koneksi.php";
                 $id=$_GET['id'];
@@ -58,7 +58,7 @@
                 $data=mysqli_fetch_array($sql);
                 ?>
                 <div class="row">
-                <form enctype="multipart/form-data" method="post" action="update-anggota.php?id=<?php echo $data[0]; ?>">
+                <form enctype="multipart/form-data" method="post" action="update-buku.php?id=<?php echo $data[0]; ?>">
                   <div class="col-md-4">
                   <img id="preview" src="<?php echo $data['cover']; ?>" height="200" width="200" class="img-responsive" alt="User Image" style="border: 3px solid white;" />
                   </div>
