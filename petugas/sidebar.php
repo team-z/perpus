@@ -6,7 +6,7 @@
 					<li class="active"><a href="index.php"><i class="fa fa-fw fa-home"></i><span class="nav-label">Dashboard</span></a></li>
 					<li><a href="pinjam-buku.php"><i class="fa fa-fw fa-book"></i><span class="nav-label">Pinjam Buku</span></a></li>
 					<li>
-						<a href="#nav-dokumen" data-toggle="collapse" aria-controls="nav-dokumen"><i class="fa fa-fw fa-archive"></i><span class="nav-label"></span>Dokumen</a>
+						<a href="#nav-dokumen" data-toggle="collapse" aria-controls="nav-dokumen"><i class="fa fa-fw fa-archive"></i><span class="nav-label">Dokumen</span></a>
 						<ul class="sidebar-nav-child collapse collapseable" id="nav-dokumen">
 							<li><a href="#"><i class="fa fa-upload"></i><span class="nav-label">Pengajuan Baru</span></a></li>
 							<li><a href="#"><i class="fa fa-bookmark"></i><span class="nav-label">Arsip Lama</span></a></li>

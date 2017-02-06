@@ -9,6 +9,7 @@ if (empty($_SESSION['fullname'])) {
 	$dtConfig = mysqli_fetch_array($config);
 	$dateMax = mktime(0,0,0, date("m"), date("d")+$dtConfig[1], date("Y"));
  $tanggal1=date("Y-m-d", $dateMax);
+ $rand=rand(12791,190271);
 }
 ?>
 <!DOCTYPE html>
@@ -30,10 +31,10 @@ if (empty($_SESSION['fullname'])) {
 			</div>
 			<div class="container-fluid">
 			<div class="row">
-			 <div class="col-md-6">
+			 <div class="col-md-4">
 				<form>
 					<div class="form-group">
-                      <input type="text" class="form-control" name="kode" placeholder="Kode Pinjam">
+                      <input type="text" class="form-control" name="kode" value="<?php echo $rand; ?>" placeholder="Kode Pinjam">(Kode Peminjaman)
 					</div>
 					<div class="form-group">
                       <input class="form-control" type="text" name="peminjam" placeholder="Nama Peminjam">
@@ -55,9 +56,25 @@ if (empty($_SESSION['fullname'])) {
 					</div>
 				  </div>
 			    </div>
+			    <div class="form-group">
+                  <button type="submit" class="btn btn-block btn-success">Pinjam</button>
+			    </div>
 				</form>
 			  </div>
-
+              <div class="col-md-offset-5">
+               <h1>Peraturan :</h1>
+                <ul style="font-size: 25px;">
+                 <li>
+                  Sebelum Melakukan Transaksi peminjaman , Harap Petugas harus memeriksa kartu agenda peminjaman dan kartu keanggotaan perpustakaan yang dibawa oleh peminjam
+                 </li>
+                 <li>
+                  Form Peminjaman harus diisi secara lengkap
+                 </li>
+                 <li>
+                  Setelah Transaksi berhasil , petugas mencatat peminjaman tersebut di kartu agenda peminjaman yang dibawa oleh peminjam
+                 </li>
+                </ul>
+              </div>
 			</div>
 		    </div>
 		</div>
