@@ -32,7 +32,7 @@ if (empty($_SESSION['fullname'])) {
 			<div class="container-fluid">
 			<div class="row">
 			 <div class="col-md-4">
-				<form>
+				<form method="POST" action="proses-pinjam.php">
 					<div class="form-group">
                       <input type="text" class="form-control" name="kode" value="<?php echo $rand; ?>" placeholder="Kode Pinjam">(Kode Peminjaman)
 					</div>
@@ -40,19 +40,19 @@ if (empty($_SESSION['fullname'])) {
                       <input class="form-control" type="text" name="peminjam" placeholder="Nama Peminjam">
 					</div>
 					<div class="form-group">
-                       <input type="text" class="form-control" placeholder="Judul Buku" name="judul">
+                       <input type="text" class="form-control" name="judul" placeholder="Judul Buku" >
 					</div>
 				<div class="row">
 				  <div class="col-md-6">
 					<div class="form-group">
 						<p>Tanggal Kembali :</p>
-						<input type="hidden" value="<?php echo $tanggal; ?>" name=""><strong><?php echo $tanggal; ?></strong><br>(Format tanggal : Y-M-D)
+						<input type="hidden" name="tanggalpinjam" value="<?php echo $tanggal; ?>"><strong><?php echo $tanggal; ?></strong><br>(Format tanggal : Y-M-D)
 					</div>
 				   </div>
 				  <div class="col-md-6">
 					<div class="form-group">
 						<p>Tanggal Kembali :</p>
-						<input type="hidden" value="<?php echo $tanggal1; ?>" name=""><strong><?php echo $tanggal1; ?></strong><br>(Format tanggal : Y-M-D)
+						<input type="hidden" name="tanggalkembali" value="<?php echo $tanggal1; ?>"><strong><?php echo $tanggal1; ?></strong><br>(Format tanggal : Y-M-D)
 					</div>
 				  </div>
 			    </div>
