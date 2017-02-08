@@ -1,125 +1,73 @@
-<?php
-include "admin/koneksi.php";
-$sql= mysqli_query($link,"SELECT * FROM config");
-$config=mysqli_fetch_array($sql);
+<?php 
+include "admin/koneksi.php"; 
+$sql=mysqli_query($link,"SELECT * FROM config");
+$data=mysqli_fetch_array($sql);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Pencarian</title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Main Page</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body style="background-color:#DCDCDC;">
+<body>
+    <?php include "navbar.php"; ?>
+    <br>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#target" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Perpus Online</a>
+    <div class="row">
+    <div class="col-md-3">
+        <ul class="nav nav-pills navbar-inverse nav-stacked" style="background-color: black;">
+        <li>
+            
+     <div class="input-group">
+      <input type="text" class="form-control" placeholder="Cari Buku Disini ..">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
     </div>
+        </li>
+            <li class="active"><a href="" style="color: white">Category</a></li>
+            <li><a href="">Pemrograman Komputer</a></li>
+            <li><a href="">Teknik Bisnis</a></li>
+            <li><a href="">Multimedia</a></li>
+            <li><a href="">Ilmu Agama</a></li>
+            <li><a href="">Majalah</a></li>
+            <li><a href="">Cerpen</a></li>
+            <li><a href="">Novel</a></li>
+            <li><a href="">Komik</a></li>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="target">
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Tentang Kami</a></li>
-      <li><a href="index.html">Keluar</a></li>
-      </ul>
-    </div>
-   </div>
-</nav>
+        </ul>
+     </div>
 <div class="container-fluid">
-<br><br><br>
-<div class="input-group">
+    <div class="col-md-9">
+      <div class="jumbotron">
+      <div class="container">
+            <div class="input-group">
                   <span class="input-group-addon">Berita Hari Ini</span>
-                     <marquee class="form-control" scrollamount=14 style="font-family: arial;font-weight: bolder;"><?php echo $config['berita']; ?></marquee>
+                     <marquee class="form-control" scrollamount="15"><?php echo $data['berita']; ?></marquee>
                   <span class="input-group-btn">
-</span>
-</div><br>
-	<div class="row">
-       <div class="col-md-6">
-        <div class="jumbotron" style="padding: 20px;">    
-        <h2><i class="fa fa-book"></i> Baca Buku Online</h2>
-          <div class="row">
-          <h2>Buku 1</h2>
-          <div class="col-md-3">
-            <img src="img/coverbuku.png" class="img-responsive" style="height: 150px;">
-          </div>
-          <div class="col-md-9">
-             <p>Ini Buku Online Pertama Kami , Klik Baca untuk membacanya secara online , atau klik download untuk dikirim ke e-mail kamu</p>
-             <a href="" class="btn btn-md btn-primary"><i class="fa fa-eye"></i> Baca</a>
-             <a href="" class="btn btn-md btn-success"><i class="fa fa-download"></i> Download</a>
-          </div>
-          </div>
-
-          <div class="row">
-          <h2>Buku 2</h2>
-          <div class="col-md-3">
-            <img src="img/cover2.png" class="img-responsive" style="height: 150px;">
-          </div>
-          <div class="col-md-9">
-             <p>Ini Buku Online Pertama Kami , Klik Baca untuk membacanya secara online , atau klik download untuk dikirim ke e-mail kamu</p>
-             <a href="" class="btn btn-md btn-primary"><i class="fa fa-eye"></i> Baca</a>
-             <a href="" class="btn btn-md btn-success"><i class="fa fa-download"></i> Download</a>
-          </div>
-          </div>
-
-
-
-
-
-           <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                 <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                 </li>
-                 <li class="page-item"><a class="page-link" href="#">1</a></li>
-                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                 <li class="page-item"><a class="page-link" href="#">3</a></li>
-                 <li class="page-item"><a class="page-link" href="#">4</a></li>
-                 <li class="page-item"><a class="page-link" href="#">5</a></li>
-                 <li class="page-item"><a class="page-link" href="#">6</a></li>
-                 <li class="page-item"><a class="page-link" href="#">7</a></li>
-                 <li class="page-item"><a class="page-link" href="#">8</a></li>
-                 <li class="page-item"><a class="page-link" href="#">9</a></li>
-                 <li class="page-item"><a class="page-link" href="#">10</a></li>
-                 <li class="page-item">
-                 <a class="page-link" href="#">Next</a>
-                 </li>
-              </ul>
-            </nav>
-           </div>
+         </span>
        </div>
-
-       <div class="col-md-6">
-          <form>
-          <div class="form-group">
-             <div class="input-group">
-                <input type="text" class="form-control input-lg" placeholder="Search">
-             <div class="input-group-btn">
-                <button class="btn btn-info btn-lg" type="submit">
-                <i class="glyphicon glyphicon-search"></i>
-                </button>
-             </div>
-             </div>
-           </div>
-       </form>
        </div>
-	</div>
+      </div>
+    </div>
 </div>
+    </div>
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sidebar_menu.js"></script>
 </body>
+
 </html>
